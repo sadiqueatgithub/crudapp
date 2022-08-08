@@ -6,7 +6,7 @@ import { Samples } from './samples';
 })
 export class SamplesService {
   constructor( private http: HttpClient) { }
-  baseUrl: string = 'http://localhost/crudmysql/';
+  baseUrl: string = 'http://localhost/API/';
 
   getSamples() {
     return this.http.get<Samples[]>(this.baseUrl+'view.php');
