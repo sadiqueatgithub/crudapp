@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="addsection">
+    <div class="text-center"><h1>Add Sample</h1></div>
+    <div style="width:50%;margin:auto">
+      <form [formGroup]="addForm" novalidate class="form">
+        <div class="row">
+          <div class="col-md-6">Name</div>
+          <div class="col-md-6"><input type="text" class="form-control" name="name" formControlName="name"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">State</div>
+          <div class="col-md-6"><input class="form-control" type="text" name="state" formControlName="state"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">Zip</div>
+          <div class="col-md-6"><input type="text" class="form-control" name="zip" formControlName="zip"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">Amount</div>
+          <div class="col-md-6"><input type="text" class="form-control" name="amount" formControlName="amount"></div>
+        </div>
+		
+		<div class="row">
+          <div class="col-md-6">Qty</div>
+          <div class="col-md-6"><input type="text" class="form-control" name="qty" formControlName="qty"></div>
+        </div>
+		
+		<div class="row">
+          <div class="col-md-6">Item</div>
+          <div class="col-md-6"><input type="text" class="form-control" name="item" formControlName="item"></div>
+        </div>
+       
+       
+        
+        <div class="row">
+          <div class="col-md-12">
+            <button class="btn btn-success"   (click)="onSubmit()">ADD</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

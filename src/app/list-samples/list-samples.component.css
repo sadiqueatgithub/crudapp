@@ -1,0 +1,15 @@
+.list{
+    background-color: white;
+    box-shadow: 0px 2px 12px 0px #e3e3e3;
+    margin-top: 60px;  
+}
+.list th{
+    background-color: #000000;
+    padding: 17px;
+    color: white;
+    border: 0;
+    outline: 0;
+}
+.btn2{
+    margin-right: 17px;
+}
