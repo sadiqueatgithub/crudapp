@@ -1,43 +1,76 @@
+  <form [formGroup]="addForm">
 <div class="container">
   <div class="addsection">
     <div class="text-center"><h1>Add Sample</h1></div>
     <div style="width:50%;margin:auto">
-      <form [formGroup]="addForm" novalidate class="form">
-        <div class="row">
+  
+         <div class="row">
           <div class="col-md-6">Name</div>
-          <div class="col-md-6"><input type="text" class="form-control" name="name" formControlName="name"></div>
-        </div>
+          <div class="col-md-6"><input class="form-control" type="text" name="name" formControlName="name">
+		  <div *ngIf="formSubmitted && addForm.get('name').errors"  class="invalid-error">
+            <div *ngIf="addForm.get('name').errors.required">Name is required</div>
+           </div>		  
+		  </div>
+		  </div>
+       
+		   
+		 
         <div class="row">
           <div class="col-md-6">State</div>
-          <div class="col-md-6"><input class="form-control" type="text" name="state" formControlName="state"></div>
+          <div class="col-md-6"><input class="form-control" type="text" name="state" formControlName="state">
+		  <div *ngIf="formSubmitted && addForm.get('state').errors"  class="invalid-error">
+            <div *ngIf="addForm.get('state').errors.required">State is required</div>
+           </div>		  
+		  </div>
         </div>
+		
         <div class="row">
           <div class="col-md-6">Zip</div>
-          <div class="col-md-6"><input type="text" class="form-control" name="zip" formControlName="zip"></div>
+          <div class="col-md-6"><input type="text" class="form-control" name="zip" formControlName="zip">
+		  <div *ngIf="formSubmitted && addForm.get('zip').errors"  class="invalid-error">
+            <div *ngIf="addForm.get('zip').errors.required">Zip is required</div>
+           </div>
+		  </div>
         </div>
+		
+		
         <div class="row">
           <div class="col-md-6">Amount</div>
-          <div class="col-md-6"><input type="text" class="form-control" name="amount" formControlName="amount"></div>
+          <div class="col-md-6"><input type="text" class="form-control" name="amount" formControlName="amount">	
+			<div *ngIf="formSubmitted && addForm.get('amount').errors"  class="invalid-error">
+            <div *ngIf="addForm.get('amount').errors.required">Amount is required</div>
+		  </div>
+        </div>
         </div>
 		
 		<div class="row">
           <div class="col-md-6">Qty</div>
-          <div class="col-md-6"><input type="text" class="form-control" name="qty" formControlName="qty"></div>
+          <div class="col-md-6"><input type="text" class="form-control" name="qty" formControlName="qty">
+		  <div *ngIf="formSubmitted && addForm.get('qty').errors"  class="invalid-error">
+            <div *ngIf="addForm.get('qty').errors.required">Qty is required</div>
+		  </div>		  
+		  </div>
         </div>
 		
 		<div class="row">
           <div class="col-md-6">Item</div>
-          <div class="col-md-6"><input type="text" class="form-control" name="item" formControlName="item"></div>
+          <div class="col-md-6"><input type="text" class="form-control" name="item" formControlName="item">
+		  <div *ngIf="formSubmitted && addForm.get('item').errors"  class="invalid-error">
+            <div *ngIf="addForm.get('item').errors.required">Item is required</div>
+		  </div>
+		  </div>
         </div>
        
        
         
         <div class="row">
           <div class="col-md-12">
-            <button class="btn btn-success"   (click)="onSubmit()">ADD</button>
+            <button class="btn btn-success" (click)="onSubmit()">ADD</button>
           </div>
         </div>
-      </form>
+      
     </div>
+	
   </div>
 </div>
+</form>

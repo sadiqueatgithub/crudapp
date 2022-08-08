@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, Validators } from '@angular/forms';
+//import { FormArray, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SamplesService } from '../samples.service';
-
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-add-samples',
   templateUrl: './add-samples.component.html',
@@ -14,7 +14,7 @@ export class AddSamplesComponent implements OnInit {
   
   vals = ''
  
- 
+ formSubmitted = false;
   constructor( 
     private formBuilder: FormBuilder,
     private router: Router,
@@ -41,6 +41,12 @@ export class AddSamplesComponent implements OnInit {
   }
 
   onSubmit(){
+	  
+	  this.formSubmitted = true;
+      if(!this.addForm.valid){
+        return;
+      }
+	  
     this.sampleService.createSample(this.addForm.value).subscribe(
       (data:any)=>{
 		
